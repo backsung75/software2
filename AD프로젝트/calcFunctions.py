@@ -84,23 +84,13 @@ def fhouse(diceNumList):
     return str(value)
 
 def s_straight(diceNumList):
-    l_ = [int(i) for i in diceNumList]
-    l_ = sorted(l_)
-    ll_ = []
-    lll_ = {}
     value = 0
+    diceNumList.sort()
+    checkList = []
     for i in range(4):
-        ll_.append(l_[i+1] - l_[i])
-    for i in sorted(ll_):
-        if i not in lll_:
-            lll_[i] = 1
-        else:
-            lll_[i] += 1
-    if len(lll_) == 2 or len(lll_) == 1:
-        for i in lll_.keys():
-            if lll_[i] == 3 or lll_[i] == 4:
-                if i == 1:
-                    value = 30
+        checkList.append(diceNumList[i+1] - diceNumList[i])
+    if checkList.count(1) > 2:
+        value = 30
     return str(value)
 
 def l_straight(diceNumList):

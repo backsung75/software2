@@ -1,2 +1,2 @@
 from calcFunctions import *
-print(fhouse([1, 1, 1, 1, 1]))
+print(s_straight([4, 3, 2, 1, 6]))
