@@ -77,19 +77,10 @@ def fcard(diceNumList):
     return str(value)
 
 def fhouse(diceNumList):
-    l_ = [int(i) for i in diceNumList]
-    ll_ = {}
     value = 0
-    for i in sorted(l_):
-        if i not in ll_:
-            ll_[i] = 1
-        else:
-            ll_[i] += 1
-    if len(ll_) == 2:
-        for i in ll_.keys():
-            if ll_[i] == 3 or ll_[i] == 2:
-                value = sum(l_)
-    
+    diceNumList.sort()
+    if (diceNumList[0] == diceNumList[1] and (diceNumList[2] == diceNumList[3] or diceNumList[2] == diceNumList[1]) and diceNumList[3] == diceNumList[4]):
+        value = sum(diceNumList)
     return str(value)
 
 def s_straight(diceNumList):
